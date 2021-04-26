@@ -5,5 +5,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface ILoginService {
-    UserDTO register(UserDTO user);
+    String register(UserDTO user);
+    String login(String userName, String password);
 }

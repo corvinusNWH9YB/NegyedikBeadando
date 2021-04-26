@@ -8,13 +8,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.MessageFormat;
+
 @Service
 @RequiredArgsConstructor
 public class LoginServiceImpl  implements ILoginService{
     private final UserRepository userRepository;
 
     @Override
-    public UserDTO register(UserDTO user) {
+    public String register(UserDTO user) {
         if(userRepository.findUserEntityByUsername(user.getUsername()) != null){
             throw new UserAlreadyExistsException(user.getUsername());
         }
@@ -23,6 +25,15 @@ public class LoginServiceImpl  implements ILoginService{
         userEntity.setPassword(user.getPassword());
         userEntity.setFullName(user.getFullName());
         userRepository.save(userEntity);
-        return user;
+        return MessageFormat.format("{0} sucessfully registered with username: {1}!",user.getFullName(), user.getUsername());
+    }
+
+    @Override
+    public String login(String userName, String password) {
+        UserEntity userEntity = userRepository.findUserEntityByUsername(userName);
+        if(userEntity.getPassword().equals(password)){
+            return MessageFormat.format("Welcome {0}!", userEntity.getFullName());
+        }
+        throw new SecurityException("Wrong username or password!");
     }
 }
