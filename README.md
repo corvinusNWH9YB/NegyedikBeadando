@@ -7,4 +7,4 @@ Készítsen egy webalkalmazást, amelyben
 - Az alkalmazás az adatokat egy perzisztens tárolóba (adatbázisba) menti el és onnan olvassa ki.
 - A regisztrációkor a rendszer ellenőrzi, hogy adott felhasználói névvel még nem regisztráltak,
 felhasználói név legalább 6 karakter hosszú;
-- jelszó leagább karakter hosszú és tartalmaz számot és betűt is.
+- jelszó legalább 8 karakter hosszú és tartalmaz számot és betűt is. A jelszót titkosítva tárolják el a perzistens tárolóban.
