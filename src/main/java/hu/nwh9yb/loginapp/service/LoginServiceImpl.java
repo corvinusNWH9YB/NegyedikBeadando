@@ -5,7 +5,6 @@ import hu.nwh9yb.loginapp.dao.UserRepository;
 import hu.nwh9yb.loginapp.dto.UserDTO;
 import hu.nwh9yb.loginapp.exception.UserAlreadyExistsException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.MessageFormat;
