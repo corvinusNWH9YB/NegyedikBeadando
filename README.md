@@ -1,6 +1,6 @@
 # NegyedikBeadando
 
-#Feladat leírása
+# Feladat leírása
 Készítsen egy webalkalmazást, amelyben 
 - megvalósít bejelentkezést (felhasználói név/jelszó); 
 - és regisztrációt (felhasználói név/jelszó/valódi név).
