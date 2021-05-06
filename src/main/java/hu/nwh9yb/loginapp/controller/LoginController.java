@@ -32,8 +32,8 @@ public class LoginController {
 
     @PostMapping("/login")
     public String login(
-            @RequestParam("username") String userName,
-            @RequestParam("password") String password)
+            @RequestBody String userName,
+            @RequestBody String password)
             throws AuthenticationException {
 
         if(StringUtils.isEmpty(userName) || StringUtils.isEmpty(password)){
